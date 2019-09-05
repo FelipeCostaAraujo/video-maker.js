@@ -22,7 +22,7 @@ async function fetchContentFromWikipedia(content) {
 function sanitizeContent(content) {
     const withoutBlankLinesAndMarkdown = removeBlankLinesAndMarkdown(content.sourceContentOriginal);
     const withoutdatesInParentheses = removeDatesInParentheses(withoutBlankLinesAndMarkdown);
-    content.sourceContentSanitized = withoutBlankLinesAndMarkdown;
+    content.sourceContentSanitized = withoutdatesInParentheses;
 
     function removeBlankLinesAndMarkdown(text) {
         const allLines = text.split('\n');
